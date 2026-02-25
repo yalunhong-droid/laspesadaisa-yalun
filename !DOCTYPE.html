@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Spesa da Isa - Calviano</title>
+    <style>
+        :root {
+            --primary-red: #e62e2e;
+            --primary-green: #2da44e;
+            --light-bg: #f9f9f9;
+            --text-dark: #333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Moderno */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img { height: 50px; }
+
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        nav a:hover { color: var(--primary-red); }
+
+        /* Slider Responsivo */
+        .slider-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .slide-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide { min-width: 100%; height: 450px; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-weight: bold;
+            z-index: 10;
+        }
+        #next { right: 15px; }
+        #prev { left: 15px; }
+
+        /* Contenuto Principale */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid var(--primary-green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h3 { color: var(--primary-red); margin-bottom: 20px; font-size: 1.5rem; }
+        .card ul li { padding: 8px 0; border-bottom: 1px solid #eee; list-style: none; }
+        .card ul li:last-child { border: none; }
+
+        /* Sezione Chi Siamo */
+        .about-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .about-img { flex: 1; min-width: 300px; border-radius: 10px; overflow: hidden; }
+        .about-text { flex: 1; min-width: 300px; }
+
+        /* Footer / Contatti */
+        footer {
+            background: var(--primary-red);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-red);
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            .slide { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com" alt="Logo Isa">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#PRODOTTI">Prodotti</a></li>
+                <li><a href="#SERVIZI">Servizi</a></li>
+                <li><a href="#CHI-SIAMO">Chi Siamo</a></li>
+                <li><a href="#CONTATTI">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="slider-container">
+    <button class="btn" id="prev">&#10094;</button>
+    <button class="btn" id="next">&#10095;</button>
+    <div class="slide-track" id="track">
+        <!-- Sostituisci questi placeholder con le tue foto reali -->
+        <div class="slide"><img src="https://images.unsplash.com" alt="Frutta fresca"></div>
+        <div class="slide"><img src="https://images.unsplash.com" alt="Gastronomia"></div>
+        <div class="slide"><img src="https://images.unsplash.com" alt="Negozio"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="grid-layout">
+        <div class="card" id="PRODOTTI">
+            <h3>I Nostri Prodotti</h3>
+            <ul>
+                <li>🍎 Frutta & Verdura fresca</li>
+                <li>🧀 Gastronomia locale</li>
+                <li>🍝 Alimentari di qualità</li>
+                <li>🧽 Prodotti per la casa</li>
+                <li>✏️ Cartoleria e cancelleria</li>
+            </ul>
+        </div>
+
+        <div class="card" id="SERVIZI">
+            <h3>Servizi Esclusivi</h3>
+            <ul>
+                <li>🚚 Spesa a domicilio</li>
+                <li>💳 Mooney & Pagamenti</li>
+                <li>🎁 Tessera fedeltà</li>
+                <li>🏢 Forniture Ho.Re.Ca</li>
+                <li>✨ Novità settimanali</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="about-section" id="CHI-SIAMO">
+        <div class="about-img">
+            <img src="https://encrypted-tbn0.gstatic.com" style="width:100%;" alt="Interno negozio">
+        </div>
+        <div class="about-text">
+            <h3>Chi Siamo</h3>
+            <p><strong>La Spesa da Isa</strong> è il punto di riferimento a Calviano per chi cerca qualità e cortesia. Gestita con passione da <strong>Saroldi Davide</strong>, la nostra attività combina la tradizione della bottega di vicinato con servizi moderni.</p>
+        </div>
+    </div>
+</div>
+
+<footer id="CONTATTI">
+    <h3>Hai bisogno di aiuto?</h3>
+    <p>Via della Tesa 70, Calviano (BS)</p>
+    <a href="tel:3332472741" class="contact-btn">Chiama Ora: 333 247 2741</a>
+    <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2024 La Spesa da Isa. Tutti i diritti riservati.</p>
+</footer>
+
+<script>
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.slide');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    let index = 0;
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    next.onclick = () => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+    }
+
+    prev.onclick = () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    // Auto-scroll ogni 5 secondi
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+    }, 5000);
+</script>
+
+</body>
+</html>
