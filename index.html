@@ -162,7 +162,34 @@
     <button class="btn" id="prev">&#10094;</button>
     <button class="btn" id="next">&#10095;</button>
     <div class="slide-track" id="track">
-        <!-- Sostituisci questi placeholder con le tue foto reali -->
+        <div class="contenitore">
+    <img src="tua-immagine.jpg" alt="La Spesa da Isa">
+    <h1 class="testo">La Spesa da Isa</h1>
+</div>
+
+<style>
+.contenitore {
+    position: relative;
+    width: 100%;
+}
+
+.contenitore img {
+    width: 100%;
+    display: block;
+}
+
+.testo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 3px 10px black;
+}
+</style>
         <div class="slide"><img src="20260224_083514.jpg" alt="Cassa"></div>
         <div class="slide"><img src="20260224_083636.jpg" alt="Gastronomia"></div>
         <div class="slide"><img src="20260224_083455.jpg" alt="Bibite"></div>
@@ -246,6 +273,7 @@
 
 </body>
 </html>
+
 
 
 
