@@ -138,6 +138,38 @@
             .nav-container { flex-direction: column; gap: 15px; }
             .slide { height: 250px; }
         }
+        .slider {
+    position: relative;
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); /* scurisce leggermente */
+    z-index: 1;
+}
+
+.slider-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 2;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.4); /* sfondo semi-trasparente */
+    border-radius: 8px;
+}
     </style>
 </head>
 <body>
@@ -162,34 +194,10 @@
     <button class="btn" id="prev">&#10094;</button>
     <button class="btn" id="next">&#10095;</button>
     <div class="slide-track" id="track">
-        <div class="contenitore">
-    <img src="tua-immagine.jpg" alt="La Spesa da Isa">
-    <h1 class="testo">La Spesa da Isa</h1>
-</div>
-
-<style>
-.contenitore {
-    position: relative;
-    width: 100%;
-}
-
-.contenitore img {
-    width: 100%;
-    display: block;
-}
-
-.testo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 70px;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 3px 3px 10px black;
-}
-</style>
+      <div class="slider-overlay"></div>
+    <div class="slider-title">
+        LA SPESA DA ISA
+    </div>
         <div class="slide"><img src="20260224_083514.jpg" alt="Cassa"></div>
         <div class="slide"><img src="20260224_083636.jpg" alt="Gastronomia"></div>
         <div class="slide"><img src="20260224_083455.jpg" alt="Bibite"></div>
@@ -273,6 +281,7 @@
 
 </body>
 </html>
+
 
 
 
